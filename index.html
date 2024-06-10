@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>COMCON24 | NACOS</title>
+        <link rel="stylesheet" href="countdown.css" >
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <div class="bgimg">
+            <div class="topleft">
+              <img
+                src="Logo.png"
+                class="w-20 h-20 md:w-40 md: h-40"
+                alt="#cc24" />
+            </div>
+            <div class="middle max-w-xl md:max-w-5xl w-full font-sans">
+                <section class="overflow-hidden rounded-3xl border border-black border-2 shadow-2xl md:grid md:grid-cols-3 ">
+                    
+                  
+                    <div class="p-4 text-center sm:p-6 md:col-span-2 lg:p-8">
+                      <p class="text- font-semibold uppercase tracking-widest">Join Us</p>
+                  
+                      <h2 class="mt-6 font-black">
+                        <span class="text-4xl tracking-wide font-black sm:text-5xl lg:text-7xl"> Career Day </span>
+                  
+                        
+                      </h2>
+                      <p class="lg:text-3xl tracking-widest">
+                        Navigating the Nigerian tech Market
+                      </p>
+                      
+                  
+                      <p
+                        id="incentive"
+                        class="mt-8 inline-block w-full bg-emerald-900 py-4 text-sm font-bold uppercase tracking-widest text-white animate-fade"
+                        href="#"
+                      >
+                        learn how to write a resume
+                    </p>
+                      <div class="flex flex-row space-x-4 text-">
+                        <p class="mt-8  font-light uppercase text-gray-800">
+                            <span class="text-emerald-900">#</span>comcon24
+                          </p>
+                          <p class="mt-8 font-light uppercase text-gray-800">
+                            <span class="text-violet-900">#</span>nacos
+                          </p>
+                          <p class="mt-8 font-medium uppercase text-gray-400">
+                            <span class="text-violet-900">#</span>
+                            <span class="text-emerald-700">C</span>
+                            <span class="text-amber-500">C</span>
+                            <span class="text-blue-900">2</span>
+                            <span class="text-violet-900">4</span>
+                          </p>
+                      </div>
+                  
+                     
+                    </div>
+                    <div class="h-32 p-2 w-full object-cover md:h-full bg-amber-100 flex flex-row md:flex-col items-center md:items-start  md:space-y-4 justify-between">
+                    
+                        <div class="flex flex-col text-start ">
+                            <p class="font-light text-base md:text-3xl">Venue</p>
+                            <h2 class="font-medium uppercase text-3xl md:text-6xl">pfa</h2>
+                        </div>
+                        <div class="flex flex-col text-start">
+                            <p class="font-light text-base md:text-3xl">Date</p>
+                            <h2 class="font-medium uppercase text-3xl md:text-6xl">June 18</h2>
+                        </div>
+                        <div class="flex flex-col text-start">
+                            <p class="font-light text-base md:text-3xl">Time</p>
+                            <h2 class="font-medium uppercase text-3xl md:text-6xl">10am</h2>
+                        </div>
+                    </div>
+                  </section>
+              
+              <hr>
+              
+              <h1 id="timer" 
+              class="timer border border-inherit bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-8xl"
+            >
+              15d
+      
+              
+            </h1>
+            </div>
+            <div class="bottomleft font-sans font-light text-base mb-2">
+                <p>National Association of Computing Students (NACOS) Computing Conference 2024</p>
+              </div>
+          </div>
+    </body>
+
+    <script>
+        const incentives = [
+          "Learn how to write a resume", "learn how to search for jobs", "learn how to network",
+          "learn how to interview prep", "learn how to negotiate salary", "learn how to upskill",
+          "join a fantastic community", "gain access to opportunities"
+        ]
+        var count = 0;
+        // Set the date we're counting down to
+        var countDownDate = new Date("Jun 17, 2024 15:37:25").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+        // Get todays date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now an the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in an element with id="demo"
+        document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ";
+        if (seconds === 30 ||  seconds === 0) {
+          if (count === incentives.length - 1){
+            count = 0;
+          }
+          document.getElementById("incentive").innerHTML = incentives[count];
+          count = count + 1;
+          
+        };
+        // If the count down is finished, write some text
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("timer").innerHTML = "EXPIRED";
+        }
+        }, 1000);
+        
+    </script>
+
+</html>
